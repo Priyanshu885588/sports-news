@@ -114,11 +114,11 @@ header {
 }
 
 .nav-items {
-  background-color: #ddd9d8;
+  background-color: var(--back-color);
   width: 20%;
   padding: 30px 0px 0px 40px;
   top: 15%;
-  right: 4%;
+  right: 3%;
   position: absolute;
   list-style: none;
   display: none;
@@ -141,7 +141,7 @@ header {
   justify-content: flex-start;
   align-items: center;
   text-decoration: none;
-  color: black;
+  color: var(--primary-color);
 }
 
 .nav-items a:hover {
