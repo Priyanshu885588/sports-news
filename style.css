@@ -358,6 +358,10 @@ input[type="search"]::-moz-search-cancel-button {
     background-image: url("https://res.cloudinary.com/dyac2zaqa/image/upload/v1690125240/tennis2_thh4ki.png");
   }
 
+  90% {
+    background-image: url("https://res.cloudinary.com/dyac2zaqa/image/upload/q_40/v1690137816/mbappe_ag5qqc.webp");
+  }
+
   100% {
     background-image: url("https://res.cloudinary.com/dyac2zaqa/image/upload/v1690125224/lebron_ozfir4.png");
   }
@@ -479,7 +483,7 @@ hr {
   z-index: 3;
   width: 60%;
   height: 22%;
-  background-color: rgb(255, 218, 185);
+  background-color: rgba(255, 218, 185, 0.934);
   right: 0;
   bottom: 6%;
   display: flex;
