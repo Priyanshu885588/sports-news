@@ -69,13 +69,52 @@ header {
 }
 
 .nav-items {
+  background-color: transparent;
+  width: 5%;
+  padding: 30px 5px;
+  top: 0%;
+  right: 55%;
   position: absolute;
   list-style: none;
+  display: none;
+  align-items: center;
+  gap: 20px;
+  border-radius: 20px;
+  animation: down 0.5s linear;
 }
+
+@keyframes down {
+  0% {
+    top: -20%;
+  }
+
+  100% {
+    top: 0%;
+  }
+}
+
 
 .nav-items a{
   text-decoration: none;
-  
+}
+
+.nav-items li a img {
+  width: 30px;
+  animation: rotate1 1s linear;
+}
+
+.nav-items li a img:hover {
+  transform: scale(1.4);
+}
+
+@keyframes rotate1 {
+  0%{
+    rotate: 0deg;
+  }
+
+  100% {
+    rotate: 360deg;
+  }
 }
 
 .nav-bar {
@@ -217,6 +256,54 @@ input[type="search"]::-moz-search-cancel-button {
   background-image: url(assests/lebron.png);
   background-repeat: no-repeat;
   background-size: 100%;
+  transition: 5s;
+  animation-name: changeImage;
+  animation-duration: 50s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.08,-0.47, 1,-1.65);
+}
+
+@keyframes changeImage {
+  0% {
+    background-image: url(assests/lebron.png);
+  }
+
+  10% {
+    background-image: url(assests/ronaldo.png);
+  }
+
+  20% {
+    background-image: url(assests/My\ kd.png);
+  }
+
+  30% {
+    background-image: url(assests/tennis.png);
+  }
+
+  40% {
+    background-image: url(assests/messi.png);
+  }
+
+  50% {
+    background-image: url(assests/giannis.png);
+  }
+
+  60% {
+    background-image: url(assests/kohli.png);
+  }
+
+  70% {
+    background-image: url(assests/gill.png);
+  }
+
+  80% {
+    background-image: url(assests/gill.png);
+  }
+
+  100% {
+    background-image: url(assests/lebron.png);
+  }
 }
 
 .component3 {
