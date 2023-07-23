@@ -6,10 +6,53 @@
   box-sizing: border-box;
 }
 
+:root {
+  --primary-color: black;
+  --back-color: #ddd9d8;
+  --primary-color-light: rgba(0, 0, 0, 0.28);
+}
+
 body {
   position: relative;
-  background-color: #ddd9d8;
+  background-color: var(--back-color);
 }
+
+.theme-btn {
+  position: absolute;
+  width: 20px;
+  height: 50px;
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 20px;
+  top: 15%;
+  left: 2%;
+  padding: 0;
+  font-size: 2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  transition: 1s;
+}
+
+.dbt{
+  animation: dark1 0.3s linear;
+  transition: 1s;
+  align-items: flex-start;
+}
+
+@keyframes dark1{
+  100%{
+    align-items: flex-start;
+  }
+}
+
+.theme-btn p {
+  position: relative;
+  animation: dark2 1s linear;
+}
+
 
 header {
   display: flex;
@@ -56,7 +99,7 @@ header {
 
 @keyframes grad {
   0% {
-    color: black;
+    color: var(--primary-color);
   }
   100% {
     color: #ee5626;
@@ -67,12 +110,13 @@ header {
   position: relative;
   margin-bottom: 11px;
   font-family: "Roboto", sans-serif;
+  color: var(--primary-color);
 }
 
 .nav-items {
   background-color: #ddd9d8;
   width: 20%;
-  padding: 30px 40px;
+  padding: 30px 0px 0px 40px;
   top: 15%;
   right: 4%;
   position: absolute;
@@ -91,7 +135,7 @@ header {
   }
 }
 
-.nav-items a{
+.nav-items a {
   display: flex;
   gap: 30px;
   justify-content: flex-start;
@@ -114,7 +158,7 @@ header {
 }
 
 @keyframes rotate1 {
-  0%{
+  0% {
     rotate: 0deg;
   }
 
@@ -138,7 +182,7 @@ header {
   background-color: transparent;
   align-self: center;
   cursor: pointer;
-  /* border-bottom: 1px solid black; */
+  /* border-bottom: 1px solid var(--primary-color); */
   padding: 3px;
 }
 
@@ -149,7 +193,8 @@ header {
 .search-bar input {
   background-color: transparent;
   border: none;
-  border-bottom: 1px solid black;
+  color: var(--primary-color);
+  border-bottom: 1px solid var(--primary-color);
   padding: 2px;
   font-size: 1rem;
   display: none;
@@ -178,7 +223,6 @@ input[type="search"]::-moz-search-cancel-button {
   display: none;
 }
 
-
 .nav-bar .ham-btn {
   border: none;
   background-color: transparent;
@@ -190,12 +234,13 @@ input[type="search"]::-moz-search-cancel-button {
 }
 
 .subscribe-btn {
-  border: 2px solid black;
+  border: 2px solid var(--primary-color);
   padding: 5px 20px;
   background-color: transparent;
   font-size: 0.9rem;
   cursor: pointer;
   transition: 0.4s;
+  color: var(--primary-color);
 }
 
 .subscribe-btn:hover {
@@ -206,11 +251,11 @@ input[type="search"]::-moz-search-cancel-button {
 .line {
   width: 100%;
   height: 2px;
-  border: 1px solid rgba(0, 0, 0, 0.191);
+  border: 1px solid var(--primary-color-light);
 }
 
 .container1 {
-  background-color: rgba(0, 0, 0, 0);
+  background-color: transparent;
   height: 88vh;
   width: 100%;
   display: flex;
@@ -235,7 +280,12 @@ input[type="search"]::-moz-search-cancel-button {
   font-weight: 700;
 }
 
+.component1 h1 {
+  color: var(--primary-color);
+}
+
 .component1 p {
+  color: var(--primary-color);
   width: 100%;
   font-size: 0.9rem;
   font-family: "Roboto", sans-serif;
@@ -252,7 +302,7 @@ input[type="search"]::-moz-search-cancel-button {
   transition: 0.5s;
 }
 
-.component1 button:hover{
+.component1 button:hover {
   color: rgb(131, 65, 12);
 }
 
@@ -268,6 +318,7 @@ input[type="search"]::-moz-search-cancel-button {
   animation-fill-mode: forwards;
   animation-iteration-count: infinite;
   animation-timing-function: steps(1);
+  animation-delay: 2s;
 }
 
 @keyframes changeImage {
@@ -315,8 +366,8 @@ input[type="search"]::-moz-search-cancel-button {
 .slide {
   position: relative;
   z-index: 2;
-  background-color: #ddd9d8;
-  border-right: 1px solid black;
+  background-color: var(--back-color);
+  border-right: 2px solid var(--primary-color-light);
   height: 100%;
   width: 0%;
   animation-name: sl;
@@ -324,19 +375,24 @@ input[type="search"]::-moz-search-cancel-button {
   animation-fill-mode: forwards;
   animation-iteration-count: infinite;
   animation-timing-function: ease;
+  animation-delay: 2s;
 }
 
 @keyframes sl {
   0% {
-   width: 100%; 
+    width: 100%;
   }
 
   10% {
-   width: 0%;
+    width: 0%;
   }
 
   20% {
-   width: 100%;
+    width: 100%;
+  }
+
+  23% {
+    width: 100%;
   }
 
   30% {
@@ -344,6 +400,10 @@ input[type="search"]::-moz-search-cancel-button {
   }
 
   40% {
+    width: 100%;
+  }
+
+  43% {
     width: 100%;
   }
 
@@ -355,11 +415,19 @@ input[type="search"]::-moz-search-cancel-button {
     width: 100%;
   }
 
+  63% {
+    width: 100%;
+  }
+
   70% {
     width: 0%;
   }
 
-  80%{
+  80% {
+    width: 100%;
+  }
+
+  83% {
     width: 100%;
   }
 
@@ -381,18 +449,24 @@ input[type="search"]::-moz-search-cancel-button {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .tt {
   color: #ee5626;
 }
 
-.component3 h4{
+.component3 h4 {
+  color: var(--primary-color);
   width: 70%;
 }
 
+.component3 p {
+  color: var(--primary-color);
+}
+
 hr {
+  color: var(--primary-color);
   width: 80%;
 }
 
@@ -428,7 +502,7 @@ hr {
   cursor: pointer;
 }
 
-.cards img{
+.cards img {
   width: 100px;
   height: 90px;
 }
