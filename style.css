@@ -259,12 +259,12 @@ input[type="search"]::-moz-search-cancel-button {
 .component2 {
   height: 100%;
   width: 40%;
-  background-image: url(assests/lebron.png);
+  background-image: url("https://res.cloudinary.com/dyac2zaqa/image/upload/v1690125224/lebron_ozfir4.png");
   background-repeat: no-repeat;
   background-size: 100%;
   transition: 5s;
   animation-name: changeImage;
-  animation-duration: 100s;
+  animation-duration: 80s;
   animation-fill-mode: forwards;
   animation-iteration-count: infinite;
   animation-timing-function: steps(1);
@@ -272,43 +272,43 @@ input[type="search"]::-moz-search-cancel-button {
 
 @keyframes changeImage {
   0% {
-    background-image: url(assests/lebron.png);
+    background-image: url("https://res.cloudinary.com/dyac2zaqa/image/upload/v1690125224/lebron_ozfir4.png");
   }
 
   10% {
-    background-image: url(assests/ronaldo.png);
+    background-image: url("https://res.cloudinary.com/dyac2zaqa/image/upload/v1690125231/ronaldo_bqr3ir.png");
   }
 
   20% {
-    background-image: url(assests/My\ kd.png);
+    background-image: url("https://res.cloudinary.com/dyac2zaqa/image/upload/v1690125232/My_kd_yb8lwv.png");
   }
 
   30% {
-    background-image: url(assests/tennis.png);
+    background-image: url("https://res.cloudinary.com/dyac2zaqa/image/upload/v1690125237/tennis_wh3kh3.png");
   }
 
   40% {
-    background-image: url(assests/messi.png);
+    background-image: url("https://res.cloudinary.com/dyac2zaqa/image/upload/v1690125232/messi_b6vcbo.png");
   }
 
   50% {
-    background-image: url(assests/giannis.png);
+    background-image: url("https://res.cloudinary.com/dyac2zaqa/image/upload/v1690125225/giannis_prjmps.png");
   }
 
   60% {
-    background-image: url(assests/kohli.png);
+    background-image: url("https://res.cloudinary.com/dyac2zaqa/image/upload/v1690125228/kohli_cms3nw.png");
   }
 
   70% {
-    background-image: url(assests/gill.png);
+    background-image: url("https://res.cloudinary.com/dyac2zaqa/image/upload/v1690125231/gill_hidbav.png");
   }
 
   80% {
-    background-image: url(assests/tennis2.png);
+    background-image: url("https://res.cloudinary.com/dyac2zaqa/image/upload/v1690125240/tennis2_thh4ki.png");
   }
 
   100% {
-    background-image: url(assests/lebron.png);
+    background-image: url("https://res.cloudinary.com/dyac2zaqa/image/upload/v1690125224/lebron_ozfir4.png");
   }
 }
 
