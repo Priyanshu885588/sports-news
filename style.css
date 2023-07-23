@@ -314,7 +314,7 @@ input[type="search"]::-moz-search-cancel-button {
   background-size: 100%;
   transition: 5s;
   animation-name: changeImage;
-  animation-duration: 100s;
+  animation-duration: 90s;
   animation-fill-mode: forwards;
   animation-iteration-count: infinite;
   animation-timing-function: steps(1);
@@ -373,7 +373,7 @@ input[type="search"]::-moz-search-cancel-button {
   background-color: var(--back-color);
   border-right: 2px solid var(--primary-color-light);
   height: 100%;
-  width: 0%;
+  width: 100%;
   animation-name: sl;
   animation-duration: 50s;
   animation-fill-mode: forwards;
