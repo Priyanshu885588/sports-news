@@ -314,7 +314,7 @@ input[type="search"]::-moz-search-cancel-button {
   background-size: 100%;
   transition: 5s;
   animation-name: changeImage;
-  animation-duration: 90s;
+  animation-duration: 100s;
   animation-fill-mode: forwards;
   animation-iteration-count: infinite;
   animation-timing-function: steps(1);
