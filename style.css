@@ -7,6 +7,7 @@
 }
 
 body {
+  position: relative;
   background-color: #ddd9d8;
 }
 
@@ -69,33 +70,38 @@ header {
 }
 
 .nav-items {
-  background-color: transparent;
-  width: 5%;
-  padding: 30px 5px;
-  top: 0%;
-  right: 55%;
+  background-color: #ddd9d8;
+  width: 20%;
+  padding: 30px 30px;
+  top: 15%;
+  right: 4%;
   position: absolute;
   list-style: none;
   display: none;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   gap: 20px;
-  border-radius: 20px;
-  animation: down 0.5s linear;
+  animation: down 0.4s linear;
+  overflow: hidden;
 }
 
 @keyframes down {
   0% {
-    top: -20%;
-  }
-
-  100% {
-    top: 0%;
+    top: 3%;
   }
 }
 
-
 .nav-items a{
+  display: flex;
+  gap: 30px;
+  justify-content: flex-start;
+  align-items: center;
   text-decoration: none;
+  color: black;
+}
+
+.nav-items a:hover {
+  transform: scale(1.2);
 }
 
 .nav-items li a img {
@@ -258,10 +264,10 @@ input[type="search"]::-moz-search-cancel-button {
   background-size: 100%;
   transition: 5s;
   animation-name: changeImage;
-  animation-duration: 50s;
+  animation-duration: 100s;
   animation-fill-mode: forwards;
   animation-iteration-count: infinite;
-  animation-timing-function: cubic-bezier(0.08,-0.47, 1,-1.65);
+  animation-timing-function: steps(1);
 }
 
 @keyframes changeImage {
@@ -298,7 +304,7 @@ input[type="search"]::-moz-search-cancel-button {
   }
 
   80% {
-    background-image: url(assests/gill.png);
+    background-image: url(assests/tennis2.png);
   }
 
   100% {
