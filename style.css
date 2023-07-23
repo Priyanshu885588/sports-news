@@ -72,7 +72,7 @@ header {
 .nav-items {
   background-color: #ddd9d8;
   width: 20%;
-  padding: 30px 30px;
+  padding: 30px 40px;
   top: 15%;
   right: 4%;
   position: absolute;
@@ -264,7 +264,7 @@ input[type="search"]::-moz-search-cancel-button {
   background-size: 100%;
   transition: 5s;
   animation-name: changeImage;
-  animation-duration: 80s;
+  animation-duration: 100s;
   animation-fill-mode: forwards;
   animation-iteration-count: infinite;
   animation-timing-function: steps(1);
@@ -312,8 +312,69 @@ input[type="search"]::-moz-search-cancel-button {
   }
 }
 
+.slide {
+  position: relative;
+  z-index: 2;
+  background-color: #ddd9d8;
+  border-right: 1px solid black;
+  height: 100%;
+  width: 0%;
+  animation-name: sl;
+  animation-duration: 50s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
+}
+
+@keyframes sl {
+  0% {
+   width: 100%; 
+  }
+
+  10% {
+   width: 0%;
+  }
+
+  20% {
+   width: 100%;
+  }
+
+  30% {
+    width: 0%;
+  }
+
+  40% {
+    width: 100%;
+  }
+
+  50% {
+    width: 0%;
+  }
+
+  60% {
+    width: 100%;
+  }
+
+  70% {
+    width: 0%;
+  }
+
+  80%{
+    width: 100%;
+  }
+
+  90% {
+    width: 0%;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
 .component3 {
   padding-top: 30px;
+  margin-left: 10px;
   height: 100%;
   width: 20%;
   background-color: transparent;
@@ -341,9 +402,10 @@ hr {
 
 .trending-bar {
   position: absolute;
+  z-index: 3;
   width: 60%;
   height: 22%;
-  background-color: rgba(255, 218, 185, 0.906);
+  background-color: rgb(255, 218, 185);
   right: 0;
   bottom: 6%;
   display: flex;
