@@ -20,7 +20,7 @@ const hambtn = document
 let th1 = false;
 
 const darkBtn = document.querySelector(".theme-btn");
-const menuBtns = document.getElementsByClassName('menu-btn');
+const menuBtns = document.getElementsByClassName("menu-btn");
 darkBtn.addEventListener("click", () => {
   if (!th1) {
     darkBtn.classList.add("dbt");
@@ -41,40 +41,52 @@ darkBtn.addEventListener("click", () => {
   }
 });
 
+
+const themeChange = () => {
+  const currentTheme = localStorage.getItem("theme");
+  console.log(currentTheme);
+  if (currentTheme === "light") {
+    document.documentElement.style.setProperty("--primary-color", "black");
+    document.documentElement.style.setProperty("--back-color", "#ddd9d8");
+    document.documentElement.style.setProperty(
+      "--primary-color-light",
+      "rgba(0, 0, 0, 0.28)"
+    );
+    localStorage.setItem("theme", "light");
+  } else {
+    document.documentElement.style.setProperty(
+      "--primary-color",
+      "rgb(255, 255, 255)"
+    );
+    document.documentElement.style.setProperty("--back-color", "#000000");
+    document.documentElement.style.setProperty(
+      "--primary-color-light",
+      "rgba(255, 255, 255, 0.28)"
+    );
+    localStorage.setItem("theme", "dark");
+  }
+};
+
+
 document.addEventListener("DOMContentLoaded", () => {
-  const darkBtn = document.querySelector(".theme-btn");
-  darkBtn.addEventListener("click", () => {
-    // Toggle the theme by changing the CSS variables
+  themeChange();
+const dark2Btn = document.querySelector(".theme-btn");
+dark2Btn.addEventListener("click", () => {
+  // Toggle the theme by changing the CSS variables
 
-    // Get the current color values
-    const primaryColor = getComputedStyle(document.documentElement)
-      .getPropertyValue("--primary-color")
-      .trim();
-    const backColor = getComputedStyle(document.documentElement)
-      .getPropertyValue("--back-color")
-      .trim();
-    const primaryColorLight = getComputedStyle(document.documentElement)
-      .getPropertyValue("--primary-color-light")
-      .trim();
+  // Set new color values based on the current theme
+  const currentTheme = localStorage.getItem("theme");
+  if (currentTheme === "light") {
+    localStorage.setItem("theme", "dark");
+    themeChange();
+  }
+  else{
+    localStorage.setItem("theme", "light");
+    themeChange();
+  }
+});
+})
 
-    // Set new color values based on the current theme
-    if (primaryColor === "rgb(255, 255, 255)") {
-      document.documentElement.style.setProperty("--primary-color", "black");
-      document.documentElement.style.setProperty("--back-color", "#ddd9d8");
-      document.documentElement.style.setProperty(
-        "--primary-color-light",
-        "rgba(0, 0, 0, 0.28)"
-      );
-    } else {
-      document.documentElement.style.setProperty(
-        "--primary-color",
-        "rgb(255, 255, 255)"
-      );
-      document.documentElement.style.setProperty("--back-color", "#000000");
-      document.documentElement.style.setProperty(
-        "--primary-color-light",
-        "rgba(255, 255, 255, 0.28)"
-      );
-    }
-  });
+document.querySelector(".subscribe-btn").addEventListener("click", () => {
+  window.location.href = "login/login.html";
 });
