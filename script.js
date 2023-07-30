@@ -86,7 +86,7 @@ const leftCmpContent = document.getElementById("left-cmp-content");
 
 function fetchAndPrintNewsData() {
   const apiUrl =
-    "https://newsdata.io/api/1/news?apikey=pub_26942ba5a93489d2d4db31e6b6bda9dfc9b58&category=sports&language=en";
+    "https://newsdata.io/api/1/news?apikey=pub_26942ba5a93489d2d4db31e6b6bda9dfc9b58&category=sports&q=cricket AND football AND basketball&language=en";
 
   // Fetch the data from the API
   fetch(apiUrl)
@@ -100,7 +100,7 @@ function fetchAndPrintNewsData() {
         const randomNumber = Math.floor(Math.random() * 10);
         leftCmpTitle.innerHTML = data.results[randomNumber].title;
         leftCmpContent.innerHTML = data.results[randomNumber].content;
-      }, 600000);
+      }, 60000);
       console.log(data);
     })
     .catch((error) => {
