@@ -80,3 +80,33 @@ document.addEventListener("DOMContentLoaded", () => {
 document.querySelector(".subscribe-btn").addEventListener("click", () => {
   window.location.href = "login/login.html";
 });
+
+const leftCmpTitle = document.getElementById("left-cmp-title");
+const leftCmpContent = document.getElementById("left-cmp-content");
+
+function fetchAndPrintNewsData() {
+  const apiUrl =
+    "https://newsdata.io/api/1/news?apikey=pub_26942ba5a93489d2d4db31e6b6bda9dfc9b58&category=sports&language=en";
+
+  // Fetch the data from the API
+  fetch(apiUrl)
+    .then((response) => response.json())
+    .then((data) => {
+      // Get the news articles array from the data
+        const randomNumber = Math.floor(Math.random() * 10);
+        leftCmpTitle.innerHTML = data.results[randomNumber].title;
+        leftCmpContent.innerHTML = data.results[randomNumber].content;
+      setInterval(() => {
+        const randomNumber = Math.floor(Math.random() * 10);
+        leftCmpTitle.innerHTML = data.results[randomNumber].title;
+        leftCmpContent.innerHTML = data.results[randomNumber].content;
+      }, 600000);
+      console.log(data);
+    })
+    .catch((error) => {
+      console.error("Error fetching news data:", error);
+    });
+}
+
+// Call the fetchAndPrintNewsData function to print the news data in the console
+fetchAndPrintNewsData();

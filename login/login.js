@@ -43,3 +43,5 @@ cta.addEventListener('click', function(e){
         check = 0;
     }
 })
+
+

@@ -17,6 +17,32 @@ body {
   background-color: var(--back-color);
 }
 
+/* Webkit-based browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(128, 128, 128, 0.33);
+  width: 1px;
+  border-radius: 5px;
+}
+
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+  border-radius: 5px;
+}
+
+* {
+  scrollbar-color: rgba(136, 136, 136, 0.539) ;
+}
+
+* {
+  scrollbar-width: thin; /* or "auto" for default width */
+}
+
+
 .theme-btn {
   position: absolute;
   width: 20px;
@@ -289,6 +315,12 @@ input[type="search"]::-moz-search-cancel-button {
   width: 100%;
   font-size: 0.9rem;
   font-family: "Roboto", sans-serif;
+}
+
+#left-cmp-content {
+  padding-right: 10px;
+  height: 200px;
+  overflow-y: auto;
 }
 
 .component1 button {
