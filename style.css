@@ -308,6 +308,7 @@ input[type="search"]::-moz-search-cancel-button {
 
 .component1 h1 {
   color: var(--primary-color);
+  font-size: 25px;
 }
 
 .component1 p {
