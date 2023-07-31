@@ -83,6 +83,7 @@ document.querySelector(".subscribe-btn").addEventListener("click", () => {
 
 const leftCmpTitle = document.getElementById("left-cmp-title");
 const leftCmpContent = document.getElementById("left-cmp-content");
+let currentIndex = 1;
 
 function fetchAndPrintNewsData() {
   const apiUrl =
@@ -93,14 +94,17 @@ function fetchAndPrintNewsData() {
     .then((response) => response.json())
     .then((data) => {
       // Get the news articles array from the data
-        const randomNumber = Math.floor(Math.random() * 10);
-        leftCmpTitle.innerHTML = data.results[randomNumber].title;
-        leftCmpContent.innerHTML = data.results[randomNumber].content;
-      setInterval(() => {
-        const randomNumber = Math.floor(Math.random() * 10);
-        leftCmpTitle.innerHTML = data.results[randomNumber].title;
-        leftCmpContent.innerHTML = data.results[randomNumber].content;
-      }, 60000);
+        leftCmpTitle.innerHTML = data.results[currentIndex].title;
+        leftCmpContent.innerHTML = data.results[currentIndex].content;
+
+        setInterval(() => {
+          const item = data.results[currentIndex];
+          leftCmpTitle.innerHTML = item.title;
+          leftCmpContent.innerHTML = item.content;
+        
+          currentIndex = (currentIndex + 1) % data.results.length;
+        }, 60000);
+        
       console.log(data);
     })
     .catch((error) => {

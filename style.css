@@ -308,20 +308,20 @@ input[type="search"]::-moz-search-cancel-button {
 
 .component1 h1 {
   color: var(--primary-color);
-  font-size: 25px;
+  font-size: 30px;
 }
 
 .component1 p {
   color: var(--primary-color);
   width: 100%;
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-family: "Roboto", sans-serif;
 }
 
 #left-cmp-content {
   padding-right: 10px;
-  height: 200px;
-  overflow-y: auto;
+  height: 97px;
+  overflow-y: hidden;
 }
 
 .component1 button {
