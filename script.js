@@ -86,8 +86,10 @@ const leftCmpContent = document.getElementById("left-cmp-content");
 let currentIndex = 1;
 
 function fetchAndPrintNewsData() {
+  const sports=["football","cricket","basketball"]
+  const randomNumber=Math.floor(Math.random()*3)
   const apiUrl =
-    "https://newsdata.io/api/1/news?apikey=pub_26942ba5a93489d2d4db31e6b6bda9dfc9b58&category=sports&language=en";
+    `https://newsdata.io/api/1/news?apikey=pub_26942ba5a93489d2d4db31e6b6bda9dfc9b58&category=sports&q=${sports[randomNumber]}&language=en`;
 
   // Fetch the data from the API
   fetch(apiUrl)
@@ -104,13 +106,32 @@ function fetchAndPrintNewsData() {
         
           currentIndex = (currentIndex + 1) % data.results.length;
         }, 60000);
-        
-      console.log(data);
     })
     .catch((error) => {
       console.error("Error fetching news data:", error);
     });
 }
 
+const trendNewsTitle=document.getElementById('news1');
+const trendNewsTitle1=document.getElementById('news2');
+const trenNewsCategory=document.getElementById('sports1')
+const trenNewsCategory1=document.getElementById('sports2')
+
 // Call the fetchAndPrintNewsData function to print the news data in the console
 fetchAndPrintNewsData();
+
+const trendingNews= () => {
+  const sports=["football","cricket","basketball"]
+  const randomNumber=Math.floor(Math.random()*3)
+  const apiUrl1=`https://newsdata.io/api/1/news?apikey=pub_26942ba5a93489d2d4db31e6b6bda9dfc9b58&category=sports&q=${sports[randomNumber]}&language=en`;
+  fetch(apiUrl1)
+    .then((response)=>response.json())
+  .then((data)=> {
+    trenNewsCategory.innerHTML=sports[randomNumber];
+    trenNewsCategory1.innerHTML=sports[randomNumber];
+    trendNewsTitle.innerHTML=data.results[0].title;
+    trendNewsTitle1.innerHTML=data.results[1].title;
+  })
+}
+
+trendingNews();

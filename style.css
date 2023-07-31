@@ -321,7 +321,7 @@ input[type="search"]::-moz-search-cancel-button {
 #left-cmp-content {
   padding-right: 10px;
   height: 97px;
-  overflow-y: hidden;
+  overflow: hidden;
 }
 
 .component1 button {
@@ -537,6 +537,7 @@ hr {
   display: flex;
   gap: 20px;
   cursor: pointer;
+  width: 50%;
 }
 
 .cards img {
@@ -555,10 +556,11 @@ hr {
   color: gray;
   font-weight: 700;
   font-size: 0.9rem;
+  text-transform: uppercase;
 }
 
 .news {
-  font-size: 1rem;
+  font-size: 0.7rem;
   width: 80%;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: 600;
