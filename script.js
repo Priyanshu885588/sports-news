@@ -76,10 +76,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+const d=new Date().toDateString();
 
-document.querySelector(".subscribe-btn").addEventListener("click", () => {
-  window.location.href = "login/login.html";
-});
+document.getElementById('date').innerHTML=d;
 
 const leftCmpTitle = document.getElementById("left-cmp-title");
 const leftCmpContent = document.getElementById("left-cmp-content");
@@ -89,13 +88,14 @@ function fetchAndPrintNewsData() {
   const sports=["football","cricket","basketball"]
   const randomNumber=Math.floor(Math.random()*3)
   const apiUrl =
-    `https://newsdata.io/api/1/news?apikey=pub_26942ba5a93489d2d4db31e6b6bda9dfc9b58&category=sports&q=${sports[randomNumber]}&language=en`;
+    `https://newsdata.io/api/1/news?apikey=pub_27902cdb910ef47bedc67e18f7e4095c39342&category=sports&q=${sports[randomNumber]}&language=en`;
 
   // Fetch the data from the API
   fetch(apiUrl)
     .then((response) => response.json())
     .then((data) => {
       // Get the news articles array from the data
+      console.log(data);
         leftCmpTitle.innerHTML = data.results[currentIndex].title;
         leftCmpContent.innerHTML = data.results[currentIndex].content;
 
@@ -123,7 +123,7 @@ fetchAndPrintNewsData();
 const trendingNews= () => {
   const sports=["football","cricket","basketball"]
   const randomNumber=Math.floor(Math.random()*3)
-  const apiUrl1=`https://newsdata.io/api/1/news?apikey=pub_26942ba5a93489d2d4db31e6b6bda9dfc9b58&category=sports&q=${sports[randomNumber]}&language=en`;
+  const apiUrl1=`https://newsdata.io/api/1/news?apikey=pub_27902cdb910ef47bedc67e18f7e4095c39342&category=sports&q=${sports[randomNumber]}&language=en`;
   fetch(apiUrl1)
     .then((response)=>response.json())
   .then((data)=> {
@@ -135,3 +135,25 @@ const trendingNews= () => {
 }
 
 trendingNews();
+
+
+const url = 'https://cricbuzz-cricket.p.rapidapi.com/matches/v1/recent';
+const options = {
+  method: 'GET',
+  headers: {
+    'X-RapidAPI-Key': 'a9e00c72c7msh70ebe500b45edf9p17cda8jsn940d38f3caf4',
+    'X-RapidAPI-Host': 'cricbuzz-cricket.p.rapidapi.com'
+  }
+};
+
+async function fetchCricketMatches() {
+  try {
+    const response = await fetch(url, options);
+    const result = await response.json();
+    console.log(result);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+fetchCricketMatches();
