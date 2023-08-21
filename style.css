@@ -79,6 +79,10 @@ body {
   animation: dark2 1s linear;
 }
 
+.login-contaier {
+  
+}
+
 
 header {
   display: flex;
@@ -267,6 +271,7 @@ input[type="search"]::-moz-search-cancel-button {
   cursor: pointer;
   transition: 0.4s;
   color: var(--primary-color);
+  text-decoration: none;
 }
 
 .subscribe-btn:hover {
